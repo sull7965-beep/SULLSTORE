@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SULLSTORE - Data Pelanggan</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="pelanggan-page">
+
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">S</div>
+            <div>
+                <h2>SULLSTORE</h2>
+                <p>Sistem Penjualan</p>
+            </div>
+        </div>
+
+        <div class="sidebar-label">MENU UTAMA</div>
+
+        <nav class="sidebar-nav">
+            <a href="/" class="nav-link">
+                <span class="nav-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="/barang.html" class="nav-link">
+                <span class="nav-icon">📦</span>
+                <span>Data Barang</span>
+            </a>
+
+            <a href="/tambah-barang.html" class="nav-link">
+                <span class="nav-icon">＋</span>
+                <span>Tambah Barang</span>
+            </a>
+
+            <a href="/pelanggan.html" class="nav-link active">
+                <span class="nav-icon">♙</span>
+                <span>Data Pelanggan</span>
+            </a>
+
+            <a href="/tambah-pelanggan.html" class="nav-link">
+                <span class="nav-icon">＋</span>
+                <span>Tambah Pelanggan</span>
+            </a>
+
+            <a href="/transaksi.html" class="nav-link">
+                <span class="nav-icon">🛒</span>
+                <span>Transaksi Penjualan</span>
+            </a>
+
+            <a href="/riwayat.html" class="nav-link">
+                <span class="nav-icon">▤</span>
+                <span>Riwayat Penjualan</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="content">
+
+        <header class="topbar">
+            <div class="topbar-heading">
+                <button id="mobileMenu" class="mobile-menu" type="button"
+                    aria-label="Buka menu">☰</button>
+
+                <div>
+                    <h1>Data Pelanggan</h1>
+                    <p>Kelola seluruh informasi pelanggan SULLSTORE</p>
+                </div>
+            </div>
+
+            <div class="topbar-actions">
+                <button id="themeToggle" class="theme-toggle" type="button">
+                    <span id="themeIcon">🌙</span>
+                    <span id="themeText">Mode Gelap</span>
+                </button>
+
+                <span class="admin">Administrator</span>
+            </div>
+        </header>
+
+        <!-- RINGKASAN -->
+        <section class="pelanggan-summary">
+            <div class="summary-card">
+                <div class="summary-icon">👥</div>
+                <div>
+                    <p>Total Pelanggan</p>
+                    <h2 id="jumlahPelanggan">0</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABEL PELANGGAN -->
+        <section class="panel pelanggan-panel">
+
+            <div class="header-bar">
+                <div>
+                    <h2>Daftar Pelanggan</h2>
+                    <p>Seluruh pelanggan yang terdaftar di database.</p>
+                </div>
+
+                <a href="/tambah-pelanggan.html" class="btn-tambah">
+                    + Tambah Pelanggan
+                </a>
+            </div>
+
+            <div class="pelanggan-toolbar">
+                <div class="search-box">
+                    <span>🔍</span>
+                    <input
+                        type="text"
+                        id="cariPelanggan"
+                        placeholder="Cari nama atau nomor HP..."
+                    >
+                </div>
+
+                <span id="statusPelanggan" class="status-pelanggan">
+                    Memuat data pelanggan...
+                </span>
+            </div>
+
+            <div class="table-container">
+                <table class="pelanggan-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama Pelanggan</th>
+                            <th>Nomor HP</th>
+                            <th>Alamat</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabelPelanggan">
+                        <tr>
+                            <td colspan="5" class="loading-cell">
+                                Memuat data pelanggan...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <footer class="page-footer">
+            SULLSTORE · Sistem Penjualan
+        </footer>
+
+    </main>
+
+    <script src="/dashboard-theme.js"></script>
+    <script src="/pelanggan.js"></script>
+
+</body>
+</html>

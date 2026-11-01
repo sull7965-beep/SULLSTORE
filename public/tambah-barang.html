@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SULLSTORE - Tambah Barang</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="tambah-barang-page">
+
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">S</div>
+            <div>
+                <h2>SULLSTORE</h2>
+                <p>Sistem Penjualan</p>
+            </div>
+        </div>
+
+        <div class="sidebar-label">MENU UTAMA</div>
+
+        <nav class="sidebar-nav">
+            <a href="/" class="nav-link">
+                <span class="nav-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="/barang.html" class="nav-link">
+                <span class="nav-icon">📦</span>
+                <span>Data Barang</span>
+            </a>
+
+            <a href="/tambah-barang.html" class="nav-link active">
+                <span class="nav-icon">＋</span>
+                <span>Tambah Barang</span>
+            </a>
+
+            <a href="/pelanggan.html" class="nav-link">
+                <span class="nav-icon">♙</span>
+                <span>Data Pelanggan</span>
+            </a>
+
+            <a href="/tambah-pelanggan.html" class="nav-link">
+                <span class="nav-icon">＋</span>
+                <span>Tambah Pelanggan</span>
+            </a>
+
+            <a href="/transaksi.html" class="nav-link">
+                <span class="nav-icon">🛒</span>
+                <span>Transaksi Penjualan</span>
+            </a>
+
+            <a href="/riwayat.html" class="nav-link">
+                <span class="nav-icon">▤</span>
+                <span>Riwayat Penjualan</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="content">
+
+        <header class="topbar">
+            <div class="topbar-heading">
+                <button id="mobileMenu" class="mobile-menu" type="button"
+                    aria-label="Buka menu">☰</button>
+
+                <div>
+                    <h1 id="judulHalaman">Tambah Barang</h1>
+                    <p>Tambahkan informasi barang ke dalam database SULLSTORE</p>
+                </div>
+            </div>
+
+            <div class="topbar-actions">
+                <button id="themeToggle" class="theme-toggle" type="button">
+                    <span id="themeIcon">🌙</span>
+                    <span id="themeText">Mode Gelap</span>
+                </button>
+
+                <span class="admin">Administrator</span>
+            </div>
+        </header>
+
+        <!-- INFORMASI HALAMAN -->
+        <section class="form-intro">
+            <div>
+                <h2>Manajemen Barang</h2>
+                <p>Lengkapi formulir berikut untuk menyimpan data barang.</p>
+            </div>
+
+            <div class="form-intro-icon">📦</div>
+        </section>
+
+        <!-- FORM BARANG -->
+        <section class="panel form-panel modern-form-panel">
+
+            <div class="form-heading">
+                <div>
+                    <h2 id="judulForm">Formulir Barang</h2>
+                    <p>Masukkan detail informasi barang dengan benar.</p>
+                </div>
+                <span class="form-required">* Wajib diisi</span>
+            </div>
+
+            <form id="formBarang">
+
+                <input type="hidden" id="id_barang">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="kode_barang">Kode Barang <span>*</span></label>
+                        <input
+                            type="text"
+                            id="kode_barang"
+                            placeholder="Contoh: BRG006"
+                            required
+                        >
+                        <small>Masukkan kode unik barang.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nama_barang">Nama Barang <span>*</span></label>
+                        <input
+                            type="text"
+                            id="nama_barang"
+                            placeholder="Masukkan nama barang"
+                            required
+                        >
+                        <small>Gunakan nama barang yang jelas.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="harga">Harga Barang (Rp) <span>*</span></label>
+                        <input
+                            type="number"
+                            id="harga"
+                            min="0"
+                            placeholder="Contoh: 50000"
+                            required
+                        >
+                        <small>Masukkan harga dalam Rupiah.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stok">Stok Barang <span>*</span></label>
+                        <input
+                            type="number"
+                            id="stok"
+                            min="0"
+                            placeholder="Contoh: 100"
+                            required
+                        >
+                        <small>Masukkan jumlah stok tersedia.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="satuan">Satuan <span>*</span></label>
+                        <input
+                            type="text"
+                            id="satuan"
+                            placeholder="Contoh: Pcs, Kg, Liter"
+                            required
+                        >
+                        <small>Contoh satuan barang.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_supplier">ID Supplier <span>*</span></label>
+                        <input
+                            type="number"
+                            id="id_supplier"
+                            min="1"
+                            placeholder="Masukkan ID supplier"
+                            required
+                        >
+                        <small>Masukkan ID supplier yang terdaftar.</small>
+                    </div>
+
+                </div>
+
+                <div class="form-divider"></div>
+
+                <div class="form-actions">
+                    <a href="/barang.html" class="btn-kembali">
+                        ← Kembali
+                    </a>
+
+                    <button type="submit" id="tombolSimpan" class="btn-simpan">
+                        <span>✓</span> Simpan Barang
+                    </button>
+                </div>
+
+            </form>
+
+            <p id="statusForm" class="status-form"></p>
+
+        </section>
+
+        <footer class="page-footer">
+            SULLSTORE · Sistem Penjualan
+        </footer>
+
+    </main>
+
+    <script src="/dashboard-theme.js"></script>
+    <script src="/tambah-barang.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SULLSTORE - Transaksi Penjualan</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="transaksi-page">
+
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-logo">S</div>
+            <div>
+                <h2>SULLSTORE</h2>
+                <p>Sistem Penjualan</p>
+            </div>
+        </div>
+
+        <div class="sidebar-label">MENU UTAMA</div>
+
+        <nav class="sidebar-nav">
+
+            <a href="/" class="nav-link">
+                <span class="nav-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="/barang.html" class="nav-link">
+                <span class="nav-icon">📦</span>
+                <span>Data Barang</span>
+            </a>
+
+            <a href="/tambah-barang.html" class="nav-link">
+                <span class="nav-icon">＋</span>
+                <span>Tambah Barang</span>
+            </a>
+
+            <a href="/pelanggan.html" class="nav-link">
+                <span class="nav-icon">♙</span>
+                <span>Data Pelanggan</span>
+            </a>
+
+            <a href="/tambah-pelanggan.html" class="nav-link">
+                <span class="nav-icon">＋</span>
+                <span>Tambah Pelanggan</span>
+            </a>
+
+            <a href="/transaksi.html" class="nav-link active">
+                <span class="nav-icon">🛒</span>
+                <span>Transaksi Penjualan</span>
+            </a>
+
+            <a href="/riwayat.html" class="nav-link">
+                <span class="nav-icon">▤</span>
+                <span>Riwayat Penjualan</span>
+            </a>
+
+        </nav>
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="content">
+
+        <header class="topbar">
+
+            <div class="topbar-heading">
+
+                <button
+                    id="mobileMenu"
+                    class="mobile-menu"
+                    type="button"
+                    aria-label="Buka menu"
+                >
+                    ☰
+                </button>
+
+                <div>
+                    <h1>Transaksi Penjualan</h1>
+                    <p>Kelola transaksi penjualan SULLSTORE</p>
+                </div>
+
+            </div>
+
+            <div class="topbar-actions">
+
+                <button id="themeToggle" class="theme-toggle" type="button">
+                    <span id="themeIcon">🌙</span>
+                    <span id="themeText">Mode Gelap</span>
+                </button>
+
+                <span class="admin">Administrator</span>
+
+            </div>
+
+        </header>
+
+        <!-- BANNER -->
+        <section class="transaksi-intro">
+            <div>
+                <span class="transaksi-intro-label">SISTEM PENJUALAN</span>
+                <h2>Buat Transaksi Baru</h2>
+                <p>
+                    Pilih pelanggan, tambahkan barang ke keranjang,
+                    lalu simpan transaksi penjualan.
+                </p>
+            </div>
+
+            <div class="transaksi-intro-icon">🛒</div>
+        </section>
+
+        <!-- INFORMASI PELANGGAN -->
+        <section class="panel transaksi-panel">
+
+            <div class="transaksi-section-heading">
+                <div class="transaksi-section-icon">👤</div>
+
+                <div>
+                    <h2>Informasi Pelanggan</h2>
+                    <p>Pilih pelanggan yang melakukan pembelian.</p>
+                </div>
+            </div>
+
+            <div class="transaksi-divider"></div>
+
+            <div class="transaksi-form-group">
+                <label for="pilihPelanggan">Pilih Pelanggan</label>
+
+                <select id="pilihPelanggan" required>
+                    <option value="">Memuat pelanggan...</option>
+                </select>
+            </div>
+
+        </section>
+
+        <!-- TAMBAH BARANG -->
+        <section class="panel transaksi-panel">
+
+            <div class="transaksi-section-heading">
+                <div class="transaksi-section-icon">📦</div>
+
+                <div>
+                    <h2>Tambah Barang</h2>
+                    <p>Pilih barang dan tentukan jumlah pembelian.</p>
+                </div>
+            </div>
+
+            <div class="transaksi-divider"></div>
+
+            <div class="transaksi-input-grid">
+
+                <div class="transaksi-form-group">
+                    <label for="pilihBarang">Pilih Barang</label>
+
+                    <select id="pilihBarang">
+                        <option value="">Memuat barang...</option>
+                    </select>
+                </div>
+
+                <div class="transaksi-form-group">
+                    <label for="jumlahBarang">Jumlah Barang</label>
+
+                    <input
+                        type="number"
+                        id="jumlahBarang"
+                        min="1"
+                        value="1"
+                    >
+                </div>
+
+            </div>
+
+            <button type="button" id="tombolTambah" class="btn-tambah-keranjang">
+                <span>＋</span>
+                Tambahkan ke Keranjang
+            </button>
+
+            <p id="statusBarang" class="transaksi-status"></p>
+
+        </section>
+
+        <!-- KERANJANG -->
+        <section class="panel transaksi-panel keranjang-panel">
+
+            <div class="keranjang-heading">
+                <div class="transaksi-section-heading">
+                    <div class="transaksi-section-icon">🛍️</div>
+
+                    <div>
+                        <h2>Keranjang Belanja</h2>
+                        <p>Daftar barang yang akan dibeli.</p>
+                    </div>
+                </div>
+
+                <span class="keranjang-label">DAFTAR PESANAN</span>
+            </div>
+
+            <div class="transaksi-divider"></div>
+
+            <div class="table-container-transaksi">
+                <table class="transaksi-table">
+                    <thead>
+                        <tr>
+                            <th>Nama Barang</th>
+                            <th>Harga</th>
+                            <th>Jumlah</th>
+                            <th>Subtotal</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabelKeranjang">
+                        <tr>
+                            <td colspan="5" class="keranjang-kosong">
+                                Keranjang masih kosong.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TOTAL -->
+            <div class="transaksi-total-area">
+
+                <div class="total-keterangan">
+                    <span>Total Belanja</span>
+                    <small>Jumlah keseluruhan pembayaran barang</small>
+                </div>
+
+                <h2 id="totalBelanja">Rp0</h2>
+
+            </div>
+
+            <button
+                type="button"
+                id="tombolSimpanTransaksi"
+                class="btn-simpan-transaksi"
+            >
+                Simpan Transaksi
+            </button>
+
+            <p id="statusTransaksi" class="transaksi-status"></p>
+
+        </section>
+
+        <footer class="page-footer">
+            SULLSTORE · Sistem Penjualan
+        </footer>
+
+    </main>
+
+    <script src="/dashboard-theme.js"></script>
+    <script src="/transaksi.js"></script>
+
+</body>
+</html>

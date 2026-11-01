@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SULLSTORE - Tambah Pelanggan</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="tambah-pelanggan-page">
+
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-logo">S</div>
+
+            <div>
+                <h2>SULLSTORE</h2>
+                <p>Sistem Penjualan</p>
+            </div>
+        </div>
+
+        <div class="sidebar-label">MENU UTAMA</div>
+
+        <nav class="sidebar-nav">
+
+            <a href="/" class="nav-link">
+                <span class="nav-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="/barang.html" class="nav-link">
+                <span class="nav-icon">📦</span>
+                <span>Data Barang</span>
+            </a>
+
+            <a href="/tambah-barang.html" class="nav-link">
+                <span class="nav-icon">＋</span>
+                <span>Tambah Barang</span>
+            </a>
+
+            <a href="/pelanggan.html" class="nav-link">
+                <span class="nav-icon">♙</span>
+                <span>Data Pelanggan</span>
+            </a>
+
+            <a href="/tambah-pelanggan.html" class="nav-link active">
+                <span class="nav-icon">＋</span>
+                <span>Tambah Pelanggan</span>
+            </a>
+
+            <a href="/transaksi.html" class="nav-link">
+                <span class="nav-icon">🛒</span>
+                <span>Transaksi Penjualan</span>
+            </a>
+
+            <a href="/riwayat.html" class="nav-link">
+                <span class="nav-icon">▤</span>
+                <span>Riwayat Penjualan</span>
+            </a>
+
+        </nav>
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="content">
+
+        <header class="topbar">
+
+            <div class="topbar-heading">
+
+                <button
+                    id="mobileMenu"
+                    class="mobile-menu"
+                    type="button"
+                    aria-label="Buka menu"
+                >
+                    ☰
+                </button>
+
+                <div>
+                    <h1 id="judulHalaman">Tambah Pelanggan</h1>
+                    <p>Kelola informasi pelanggan SULLSTORE</p>
+                </div>
+
+            </div>
+
+            <div class="topbar-actions">
+
+                <button id="themeToggle" class="theme-toggle" type="button">
+                    <span id="themeIcon">🌙</span>
+                    <span id="themeText">Mode Gelap</span>
+                </button>
+
+                <span class="admin">Administrator</span>
+
+            </div>
+
+        </header>
+
+        <!-- INFORMASI HALAMAN -->
+        <section class="form-intro">
+            <div>
+                <span class="form-intro-label">MANAJEMEN PELANGGAN</span>
+                <h2>Data Pelanggan</h2>
+                <p>
+                    Tambahkan informasi pelanggan baru atau perbarui
+                    informasi pelanggan yang sudah terdaftar.
+                </p>
+            </div>
+
+            <div class="form-intro-icon">👥</div>
+        </section>
+
+        <!-- FORMULIR -->
+        <section class="panel pelanggan-form-panel">
+
+            <div class="form-heading">
+                <div class="form-heading-icon">＋</div>
+
+                <div>
+                    <h2 id="judulForm">Formulir Pelanggan</h2>
+                    <p>Lengkapi informasi pelanggan di bawah ini.</p>
+                </div>
+            </div>
+
+            <div class="form-divider"></div>
+
+            <form id="formPelanggan">
+
+                <input type="hidden" id="id_pelanggan">
+
+                <div class="form-group-pelanggan">
+                    <label for="nama_pelanggan">
+                        Nama Pelanggan
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nama_pelanggan"
+                        placeholder="Contoh: Andi Saputra"
+                        autocomplete="name"
+                        required
+                    >
+
+                    <small>Masukkan nama lengkap pelanggan.</small>
+                </div>
+
+                <div class="form-group-pelanggan">
+                    <label for="no_hp">
+                        Nomor HP
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="no_hp"
+                        placeholder="Contoh: 081234567890"
+                        autocomplete="tel"
+                        required
+                    >
+
+                    <small>Masukkan nomor HP yang dapat dihubungi.</small>
+                </div>
+
+                <div class="form-group-pelanggan">
+                    <label for="alamat">
+                        Alamat
+                        <span>*</span>
+                    </label>
+
+                    <textarea
+                        id="alamat"
+                        rows="4"
+                        placeholder="Masukkan alamat lengkap pelanggan"
+                        autocomplete="street-address"
+                        required
+                    ></textarea>
+
+                    <small>Masukkan alamat tempat tinggal pelanggan.</small>
+                </div>
+
+                <div class="form-required-note">
+                    <span>*</span> Wajib diisi
+                </div>
+
+                <div class="form-actions-pelanggan">
+
+                    <button
+                        type="submit"
+                        id="tombolSimpan"
+                        class="btn-simpan-pelanggan"
+                    >
+                        Simpan Pelanggan
+                    </button>
+
+                    <a href="/pelanggan.html" class="btn-kembali-pelanggan">
+                        Kembali
+                    </a>
+
+                </div>
+
+            </form>
+
+            <p id="statusForm" class="status-form-pelanggan"></p>
+
+        </section>
+
+        <footer class="page-footer">
+            SULLSTORE · Sistem Penjualan
+        </footer>
+
+    </main>
+
+    <script src="/dashboard-theme.js"></script>
+    <script src="/tambah-pelanggan.js"></script>
+
+</body>
+</html>

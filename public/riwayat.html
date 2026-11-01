@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SULLSTORE - Riwayat Penjualan</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="riwayat-page">
+
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-logo">S</div>
+            <div>
+                <h2>SULLSTORE</h2>
+                <p>Sistem Penjualan</p>
+            </div>
+        </div>
+
+        <div class="sidebar-label">MENU UTAMA</div>
+
+        <nav class="sidebar-nav">
+
+            <a href="/" class="nav-link">
+                <span class="nav-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="/barang.html" class="nav-link">
+                <span class="nav-icon">📦</span>
+                <span>Data Barang</span>
+            </a>
+
+            <a href="/tambah-barang.html" class="nav-link">
+                <span class="nav-icon">＋</span>
+                <span>Tambah Barang</span>
+            </a>
+
+            <a href="/pelanggan.html" class="nav-link">
+                <span class="nav-icon">👥</span>
+                <span>Data Pelanggan</span>
+            </a>
+
+            <a href="/tambah-pelanggan.html" class="nav-link">
+                <span class="nav-icon">＋</span>
+                <span>Tambah Pelanggan</span>
+            </a>
+
+            <a href="/transaksi.html" class="nav-link">
+                <span class="nav-icon">🛒</span>
+                <span>Transaksi Penjualan</span>
+            </a>
+
+            <a href="/riwayat.html" class="nav-link active">
+                <span class="nav-icon">📋</span>
+                <span>Riwayat Penjualan</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="sidebar-footer-icon">●</div>
+            <div>
+                <strong>SULLSTORE</strong>
+                <p>Sistem Aktif</p>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- KONTEN UTAMA -->
+    <main class="dashboard-content">
+
+        <!-- TOPBAR -->
+        <header class="dashboard-topbar">
+
+            <div class="topbar-left">
+                <button class="mobile-menu" id="mobileMenu" type="button">
+                    ☰
+                </button>
+
+                <div>
+                    <h1>Riwayat Penjualan</h1>
+                    <p>Kelola dan pantau seluruh transaksi penjualan.</p>
+                </div>
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="theme-toggle" id="themeToggle" type="button">
+                    <span id="themeIcon">🌙</span>
+                    <span id="themeText">Dark Mode</span>
+                </button>
+
+                <div class="admin-profile">
+                    <div class="admin-avatar">A</div>
+                    <div>
+                        <strong>Administrator</strong>
+                        <span>Admin SULLSTORE</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- INFORMASI HALAMAN -->
+        <section class="riwayat-welcome">
+            <div>
+                <span class="riwayat-badge">TRANSACTION MANAGEMENT</span>
+                <h2>Riwayat Transaksi</h2>
+                <p>
+                    Lihat seluruh transaksi yang sudah tersimpan
+                    di database SULLSTORE.
+                </p>
+            </div>
+
+            <a href="/transaksi.html" class="riwayat-new-button">
+                <span>＋</span> Transaksi Baru
+            </a>
+        </section>
+
+
+        <!-- KARTU STATISTIK -->
+        <section class="riwayat-statistics">
+
+            <div class="riwayat-stat-card">
+                <div class="riwayat-stat-icon blue-icon">📊</div>
+
+                <div>
+                    <p>Total Transaksi</p>
+                    <h2 id="jumlahTransaksi">0</h2>
+                    <span>Seluruh transaksi penjualan</span>
+                </div>
+            </div>
+
+
+            <div class="riwayat-stat-card">
+                <div class="riwayat-stat-icon green-icon">💰</div>
+
+                <div>
+                    <p>Total Penjualan</p>
+                    <h2 id="totalPenjualan">Rp0</h2>
+                    <span>Akumulasi nilai penjualan</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- TABEL RIWAYAT -->
+        <section class="riwayat-panel">
+
+            <div class="riwayat-panel-header">
+
+                <div>
+                    <h2>Daftar Penjualan</h2>
+                    <p>Informasi transaksi yang tersimpan di database.</p>
+                </div>
+
+                <div class="riwayat-table-label">
+                    <span class="status-dot"></span>
+                    Data Transaksi
+                </div>
+
+            </div>
+
+
+            <!-- PENCARIAN -->
+            <div class="riwayat-search-area">
+
+                <div class="riwayat-search-box">
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="cariTransaksi"
+                        placeholder="Cari nomor transaksi atau nama pelanggan..."
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- TABEL -->
+            <div class="riwayat-table-wrapper">
+
+                <table class="riwayat-table">
+
+                    <thead>
+                        <tr>
+                            <th>Nomor Transaksi</th>
+                            <th>Tanggal</th>
+                            <th>Pelanggan</th>
+                            <th>Barang Dibeli</th>
+                            <th>Total Harga</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabelRiwayat">
+                        <tr>
+                            <td colspan="6" class="riwayat-empty">
+                                Memuat data penjualan...
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="riwayat-panel-footer">
+                <p id="statusRiwayat">
+                    Mengambil data penjualan...
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="/dashboard-theme.js"></script>
+    <script src="/riwayat.js"></script>
+
+</body>
+</html>
